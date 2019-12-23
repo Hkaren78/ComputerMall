@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45668937-8df2-4ece-9cfa-fd4649cb4a1c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/goods.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/goods.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/goods/goods001.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/goods/goods001.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/goods/goods002.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/goods/goods002.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/goods/goods003.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/goods/goods003.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/goods/goods004.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/goods/goods004.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/goods/goods005.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/goods/goods005.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/goods/goods006.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/goods/goods006.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/goods/goods007.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/goods/goods007.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/goods/goods008.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/goods/goods008.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/goods/goods009.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/goods/goods009.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/goods/goods010.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/goods/goods010.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/logo02.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/logo02.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
