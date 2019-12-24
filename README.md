@@ -1,6 +1,6 @@
-## DailyFresh
+## ComputerMall
 
-**天天生鲜**：小型电商购物网站，基于<code>Python3.x</code>和<code>Django2.x</code>
+**电脑商城**：小型电商购物网站，基于<code>Python3.x</code>和<code>Django.x</code>
 
 项目尽量使用Django内部提供的API，后台管理为Django自带的管理系统django-admin。适合Django的小型实战项目。
 
@@ -12,39 +12,6 @@
 - 用户中心：支持用户个人信息，收货地址等信息的更新，商品加入购物车，订单生成。
 - 商品下单：在支付接口和企业资质的支持下可完成商品的下单功能，按照原子事务处理，下单异常则终止此次下单过程。
 - 后台管理：支持后台管理功能，商品及用户信息的增加，更新与删除，可自定制样式与功能，日志，以及权限的管理和分配。
-
-
-## 在线样例：
-
-### 在线地址
-
-[http://39.108.176.210](http://39.108.176.210)
-
-账号：weilanhanf
-
-密码：weilanhanf
-
-### 管理人员入口
-
-[http://39.108.176.210/admin](http://39.108.176.210/admin)
-
-账号：root
-
-密码：rootroot
-
-
-## 预览：
-### 首页
-![index](https://raw.githubusercontent.com/weilanhanf/Photos/master/DailyFresh/index.png)
-
-### 登录
-![login](https://raw.githubusercontent.com/weilanhanf/Photos/master/DailyFresh/login.png)
-
-### 商品详情
-![goods](https://raw.githubusercontent.com/weilanhanf/Photos/master/DailyFresh/goods.png)
-
-### 购物车
-![cart](https://raw.githubusercontent.com/weilanhanf/Photos/master/DailyFresh/cart.png)
 
 ## 安装：
 
@@ -74,29 +41,21 @@
 
 <code>./python manage.py runserver</code>
 
-浏览器打开: <code>http://127.0.0.1</code> 即可进入普通用户入口
+浏览器打开: <code>http://127.0.0.1:8000</code> 即可进入普通用户入口
 
-浏览器打开: <code>http://127.0.0.1/admin</code> 即可进入超级用户入口
+浏览器打开: <code>http://127.0.0.1:8000/admin</code> 即可进入超级用户入口
 
+## 预览效果
 
-## 补充：
+### 首页
 
-### 功能：
+### 商品分类
 
-欢迎您对该项目做出任何补充与修改：
-- 商品的评价功能
-- 合适的商品推荐算法
-- 用户的邮箱注册
-- 一个更多商品数据量的数据库
-</br>
-......
-</br>
-最近一段时间比较忙，以后会慢慢完善
+### 购物车
 
-## 感谢：
+### 订单
 
-感谢您的star
+### 用户信息
 
-### 联系：
+### 地址
 
-如需联系请前往博客园留言 <a href="https://www.cnblogs.com/welan/p/9231530.html" target="_blank">蔚蓝的蓝</a>
