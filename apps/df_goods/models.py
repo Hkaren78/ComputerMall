@@ -6,7 +6,7 @@ from tinymce.models import HTMLField  # 使用富文本编辑框要在settings�
 
 
 class TypeInfo(models.Model):
-    # 商品分类信息  水果 海鲜等
+    # 商品分类信息  
     isDelete = models.BooleanField(default=False)
     ttitle = models.CharField(max_length=20, verbose_name="分类")
 
