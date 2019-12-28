@@ -100,7 +100,7 @@
 		<div class="goods_con clearfix">
 			<div class="goods_banner fl"><img src="/static/images/banner02.jpg"></div>
 			<ul class="goods_list fl">
-                {% for goods in type11 %}
+                {% for goods in type1 %}
                 <li>
                     <h4><a href="/{{ goods.id }}/">{{ goods.gtitle }}</a></h4>
                     <a href="/{{ goods.id }}/"><img src="{{ MEDIA_URL }}{{ goods.gpic }}"></a>
@@ -117,9 +117,11 @@
 			<h3 class="fl" id="model03">戴尔</h3>
 			<div class="subtitle fl">
 				<span>|</span>
-				<a href="#">鲜芒</a>
-				<a href="#">加州提子</a>
-				<a href="#">亚马逊牛油果</a>
+{#				<a href="#">惠普（HP）战66 AMD升级版</a>#}
+{#				<a href="#">惠普（HP）光影精灵5plus</a>				#}
+                {% for g in type2 %}
+                    <a href="/{{ g.id }}/">{{ g.gtitle|slice:'10' }}</a>
+                {% endfor %}
 			</div>
 			<a href="#" class="goods_more fr">查看更多 ></a>
 		</div>
@@ -127,26 +129,14 @@
 		<div class="goods_con clearfix">
 			<div class="goods_banner fl"><img src="/static/images/banner03.jpg"></div>
 			<ul class="goods_list fl">
-				<li>
-					<h4><a href="#">电脑电脑电脑电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
-				<li>
-					<h4><a href="#">电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
-				<li>
-					<h4><a href="#">电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
-				<li>
-					<h4><a href="#">电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
+				 {% for goods in type2 %}
+                <li>
+                    <h4><a href="/{{ goods.id }}/">{{ goods.gtitle }}</a></h4>
+                    <a href="/{{ goods.id }}/"><img src="{{ MEDIA_URL }}{{ goods.gpic }}"></a>
+{#                    静态文件添加目录static前一定加"/"#}
+                    <div class="prize"> ￥ {{ goods.gprice }} </div>
+                </li>
+                {% endfor %}
 			</ul>
 		</div>
 
@@ -157,9 +147,11 @@
 			<h3 class="fl" id="model04">惠普</h3>
 			<div class="subtitle fl">
 				<span>|</span>
-				<a href="#">鲜芒</a>
-				<a href="#">加州提子</a>
-				<a href="#">亚马逊牛油果</a>
+{#				<a href="#">拯救者 Y7000P 2019</a>#}
+{#				<a href="#">Y9000X</a>				#}
+                {% for g in type3 %}
+                    <a href="/{{ g.id }}/">{{ g.gtitle|slice:'10' }}</a>
+                {% endfor %}
 			</div>
 			<a href="#" class="goods_more fr">查看更多 ></a>
 		</div>
@@ -167,26 +159,14 @@
 		<div class="goods_con clearfix">
 			<div class="goods_banner fl"><img src="/static/images/banner04.jpg"></div>
 			<ul class="goods_list fl">
-				<li>
-					<h4><a href="#">电脑电脑电脑电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
-				<li>
-					<h4><a href="#">电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
-				<li>
-					<h4><a href="#">电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
-				<li>
-					<h4><a href="#">电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
+				 {% for goods in type3 %}
+                <li>
+                    <h4><a href="/{{ goods.id }}/">{{ goods.gtitle }}</a></h4>
+                    <a href="/{{ goods.id }}/"><img src="{{ MEDIA_URL }}{{ goods.gpic }}"></a>
+{#                    静态文件添加目录static前一定加"/"#}
+                    <div class="prize"> ￥ {{ goods.gprice }} </div>
+                </li>
+                {% endfor %}
 			</ul>
 		</div>
 	</div>
@@ -206,26 +186,14 @@
 		<div class="goods_con clearfix">
 			<div class="goods_banner fl"><img src="/static/images/banner05.jpg"></div>
 			<ul class="goods_list fl">
-				<li>
-					<h4><a href="#">电脑电脑电脑电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
-				<li>
-					<h4><a href="#">电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
-				<li>
-					<h4><a href="#">电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
-				<li>
-					<h4><a href="#">电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
+				 {% for goods in type4 %}
+                <li>
+                    <h4><a href="/{{ goods.id }}/">{{ goods.gtitle }}</a></h4>
+                    <a href="/{{ goods.id }}/"><img src="{{ MEDIA_URL }}{{ goods.gpic }}"></a>
+{#                    静态文件添加目录static前一定加"/"#}
+                    <div class="prize"> ￥ {{ goods.gprice }} </div>
+                </li>
+                {% endfor %}
 			</ul>
 		</div>
 	</div>
@@ -235,9 +203,11 @@
 			<h3 class="fl" id="model06">华硕</h3>
 			<div class="subtitle fl">
 				<span>|</span>
-				<a href="#">鲜芒</a>
-				<a href="#">加州提子</a>
-				<a href="#">亚马逊牛油果</a>
+{#				<a href="#">拯救者 Y7000P 2019</a>#}
+{#				<a href="#">Y9000X</a>				#}
+                {% for g in type5 %}
+                    <a href="/{{ g.id }}/">{{ g.gtitle|slice:'10' }}</a>
+                {% endfor %}
 			</div>
 			<a href="#" class="goods_more fr">查看更多 ></a>
 		</div>
@@ -245,26 +215,14 @@
 		<div class="goods_con clearfix">
 			<div class="goods_banner fl"><img src="/static/images/banner06.jpg"></div>
 			<ul class="goods_list fl">
-				<li>
-					<h4><a href="#">电脑电脑电脑电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
-				<li>
-					<h4><a href="#">电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
-				<li>
-					<h4><a href="#">电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
-				<li>
-					<h4><a href="#">电脑</a></h4>
-					<a href="#"><img src="/static/images/goods.jpg"></a>
-					<div class="prize">¥ 38.00</div>
-				</li>
+				 {% for goods in type5 %}
+                <li>
+                    <h4><a href="/{{ goods.id }}/">{{ goods.gtitle }}</a></h4>
+                    <a href="/{{ goods.id }}/"><img src="{{ MEDIA_URL }}{{ goods.gpic }}"></a>
+{#                    静态文件添加目录static前一定加"/"#}
+                    <div class="prize"> ￥ {{ goods.gprice }} </div>
+                </li>
+                {% endfor %}
 			</ul>
 		</div>
 	</div>
