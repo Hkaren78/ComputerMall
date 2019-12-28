@@ -13,26 +13,26 @@
 				<h1>全部商品分类</h1>
 				<span></span>
 				<ul class="subnav">
-					<li><a href="/list1_1_1/" class="fruit">新鲜水果</a></li>
-					<li><a href="/list2_1_1/" class="seafood">海鲜水产</a></li>
-					<li><a href="#" class="meet">猪牛羊肉</a></li>
-					<li><a href="#" class="egg">禽类蛋品</a></li>
-					<li><a href="#" class="vegetables">新鲜蔬菜</a></li>
-					<li><a href="#" class="ice">速冻食品</a></li>
+					<li><a href="/list1_1_1/" class="fruit">苹果</a></li>
+					<li><a href="/list2_1_1/" class="seafood">联想</a></li>
+					<li><a href="#" class="meet">戴尔</a></li>
+					<li><a href="#" class="egg">惠普</a></li>
+					<li><a href="#" class="vegetables">华为</a></li>
+					<li><a href="#" class="ice">华硕</a></li>
 				</ul>
 			</div>
 			<ul class="navlist fl">
 				<li><a href="{% url "df_goods:index" %}">首页</a></li>
+				<!--li class="interval">|</li>
+				<li><a href="">手机</a></li>
 				<li class="interval">|</li>
-				<li><a href="">手机生鲜</a></li>
-				<li class="interval">|</li>
-				<li><a href="">抽奖</a></li>
+				<li><a href="">抽奖</a></li-->
 			</ul>
 		</div>
 	</div>
     <script type="text/javascript">
         if({{ search_status }}==0){
-            alert("您的查询结果为空，为您推荐以下商品");
+            alert("没有找到相关商品，为您推荐以下好物：");
         }
     </script>
 	<div class="breadcrumb">
