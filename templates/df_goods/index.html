@@ -24,10 +24,10 @@
 		<ul class="subnav fl">
 			<li><a href="#model01" class="fruit">苹果</a></li>
 			<li><a href="#model02" class="seafood">联想</a></li>
-			<li><a href="#model03" class="meet">戴尔</a></li>
-			<li><a href="#model04" class="egg">惠普</a></li>
-			<li><a href="#model05" class="vegetables">华为</a></li>
-			<li><a href="#model06" class="ice">华硕</a></li>
+			<li><a href="#model03" class="meet">惠普</a></li>
+			<li><a href="#model04" class="egg">华为</a></li>
+			<li><a href="#model05" class="vegetables">华硕</a></li>
+			<li><a href="#model06" class="ice">戴尔</a></li>
 		</ul>
 		<div class="slide fl">
 			<ul class="slide_pics">
@@ -114,7 +114,7 @@
 
 	<div class="list_model">
 		<div class="list_title clearfix">
-			<h3 class="fl" id="model03">戴尔</h3>
+			<h3 class="fl" id="model03">惠普</h3>
 			<div class="subtitle fl">
 				<span>|</span>
 {#				<a href="#">惠普（HP）战66 AMD升级版</a>#}
@@ -144,7 +144,7 @@
 
 	<div class="list_model">
 		<div class="list_title clearfix">
-			<h3 class="fl" id="model04">惠普</h3>
+			<h3 class="fl" id="model04">华为</h3>
 			<div class="subtitle fl">
 				<span>|</span>
 {#				<a href="#">拯救者 Y7000P 2019</a>#}
@@ -173,12 +173,14 @@
 
 	<div class="list_model">
 		<div class="list_title clearfix">
-			<h3 class="fl" id="model05">华为</h3>
+			<h3 class="fl" id="model05">华硕</h3>
 			<div class="subtitle fl">
 				<span>|</span>
-				<a href="#">鲜芒</a>
-				<a href="#">加州提子</a>
-				<a href="#">亚马逊牛油果</a>
+{#				<a href="#">拯救者 Y7000P 2019</a>#}
+{#				<a href="#">Y9000X</a>				#}
+                {% for g in type4 %}
+                    <a href="/{{ g.id }}/">{{ g.gtitle|slice:'10' }}</a>
+                {% endfor %}
 			</div>
 			<a href="#" class="goods_more fr">查看更多 ></a>
 		</div>
@@ -200,7 +202,7 @@
 
 	<div class="list_model">
 		<div class="list_title clearfix">
-			<h3 class="fl" id="model06">华硕</h3>
+			<h3 class="fl" id="model06">戴尔</h3>
 			<div class="subtitle fl">
 				<span>|</span>
 {#				<a href="#">拯救者 Y7000P 2019</a>#}
