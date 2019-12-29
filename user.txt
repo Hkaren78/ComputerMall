@@ -1,0 +1,155 @@
+用户信息主要有以下几个界面：
+1. 用户注册
+2. 用户登录
+3. 用户信息查看/修改
+
+1. 用户注册
+
+主要定义以下几个变量：
+	var error_name = false;
+	var error_password = false;
+	var error_check_password = false;
+	var error_email = false;
+	var error_check = false;
+（1）判断用户名是否符合规定
+function check_user_name(){
+		var len = $('#user_name').val().length;
+
+		<!--用户名长度不符合规定（不在5-20个字符之内）-->
+		if(len<5||len>20)
+		{
+			$('#user_name').next().html('输入5-20个字符的用户名');
+			$('#user_name').next().show();
+			error_name = true;
+
+		}
+		<!--长度符合规定-->
+		else
+		{
+			$.get('{% url "df_user:register_exist" %}?uname='+$('#user_name').val(),function(data){
+                if (data.count >= 1) { <!--若data.count >= 1，则该用户名已存在-->
+                    $('#user_name').next().html('用户名已经存在').show();
+                    error_name = true;
+                }else{
+                    $('#user_name').next().hide();
+                    error_name = false;
+                }
+            });
+        }
+}
+
+（2）输入4-20位密码
+function check_pwd(){
+		var len = $('#pwd').val().length;
+		if(len<4||len>20)
+		{
+			$('#pwd').next().html('密码最少4位，最长20位');
+			$('#pwd').next().show();
+			error_password = true;
+		}
+		else
+		{
+			$('#pwd').next().hide();
+			error_password = false;
+		}
+}
+（3）确认密码
+<!--确认密码-->
+	function check_cpwd(){
+		var pass = $('#pwd').val();
+		var cpass = $('#cpwd').val();
+
+		<!--判断两次输入的密码是否一致-->
+		if(pass!=cpass)
+		{
+			$('#cpwd').next().html('两次输入的密码不一致');
+			$('#cpwd').next().show();
+			error_check_password = true;
+		}
+		else
+		{
+			$('#cpwd').next().hide();
+			error_check_password = false;
+		}
+
+	}
+4. 电子邮箱
+<!--邮箱-->
+	function check_email(){
+		var re = /^[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$/;
+
+		if(re.test($('#email').val()))
+		{
+			$('#email').next().hide();
+			error_email = false;
+		}
+		else
+		{
+			$('#email').next().html('你输入的邮箱格式不正确');
+			$('#email').next().show();
+			error_check_password = true;
+		}
+
+	}
+（5）勾选同意用户使用手册
+（6）判断是否满足全部条件，若满足，则可以进行注册
+$('#reg_form').submit(function() {
+		check_user_name();
+		check_pwd();
+		check_cpwd();
+		check_email();
+
+		if(error_name == false && error_password == false && error_check_password == false && error_email == false && error_check == false)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+
+	});
+
+2. 用户登录
+
+（1）判断用户名是否正确
+if({{ error_name }}==1){
+            $('.user_error').html('用户名错误').show();
+}
+
+（2）判断密码是否正确
+if({{ error_pwd }}==1){
+            $('.pwd_error').html('密码错误').show();
+}
+
+（3）给出提示信息
+<!--若用户没有输入用户名或密码，则给出相应提示信息-->
+$('.name_input').blur(function () {
+            if($('.name_input').val().length=0){
+                $('.user_error').html('请填写用户名').show();
+                name_error = false;
+            }else{
+                $('.user_error').hide();
+                name_error = true;
+            }
+});
+        $('.pass_input').blur(function () {
+            if($('.pass_input').val().length=0){
+                $('.pwd_error').html('请输入密码').show();
+                pwd_error = false;
+            }else{
+                $('.pwd_error').hide();
+                pwd_error = true;
+            }
+})
+
+3. 用户个人信息查看、修改（包括联系方式、联系地址）
+<div class="info_con clearfix">
+	<h3 class="common_title2">基本信息</h3>
+		<ul class="user_info_list">
+			<li><span>用户名：</span>{{ user_name }}</li>
+			<li><span>联系方式：</span>{{ user_phone }}</li>
+			<li><span>联系地址：</span>{{ user_address }}</li>
+		</ul>
+</div>
+
