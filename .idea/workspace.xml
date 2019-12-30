@@ -4,7 +4,6 @@
     <list default="true" id="45668937-8df2-4ece-9cfa-fd4649cb4a1c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/df_goods/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/df_goods/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +123,7 @@
       <recent name="F:\Py35\Django\daily_fresh_demo\static" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.apriori">
+  <component name="RunManager" selected="Python.自动化微信发信息">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -500,10 +499,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="2572" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1577542999440">
+    <state x="2572" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1577716978674">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2572" y="348" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1577542999440" />
+    <state x="2572" y="348" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1577716978674" />
   </component>
   <component name="masterDetails">
     <states>
