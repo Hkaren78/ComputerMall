@@ -6,6 +6,7 @@
     <script type="text/javascript">
     $(function(){
 
+	<!--定义如下变量-->
 	var error_name = false;
 	var error_password = false;
 	var error_check_password = false;
@@ -47,6 +48,7 @@
 	function check_user_name(){
 		var len = $('#user_name').val().length;
 
+		<!--用户名长度在5-20个字符之间-->
 		if(len<5||len>20)
 		{
 			$('#user_name').next().html('输入5-20个字符的用户名');
@@ -68,6 +70,7 @@
         }
 	}
 
+	<!--密码长度为4-20个字符-->
 	function check_pwd(){
 		var len = $('#pwd').val().length;
 		if(len<4||len>20)
@@ -83,7 +86,7 @@
 		}
 	}
 
-
+	<!--判断两次输入的密码是否一致-->
 	function check_cpwd(){
 		var pass = $('#pwd').val();
 		var cpass = $('#cpwd').val();
@@ -102,6 +105,7 @@
 
 	}
 
+	<!--电子邮箱-->
 	function check_email(){
 		var re = /^[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$/;
 
@@ -119,7 +123,7 @@
 
 	}
 
-
+    <!--若上述条件全部满足，并且已勾选同意用户指南，则可以完成注册-->
 	$('#reg_form').submit(function() {
 		check_user_name();
 		check_pwd();
@@ -144,7 +148,7 @@
 	<div class="register_con">
 		<div class="l_con fl">
 			<a class="reg_logo"><img src="/static/images/logo02.png"></a>
-			<div class="reg_slogan">足不出户  ·  新鲜每一天</div>
+			<div class="reg_slogan">欢迎进入电脑商城</div>
 			<div class="reg_banner"></div>
 		</div>
 
