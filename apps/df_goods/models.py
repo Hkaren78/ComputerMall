@@ -24,8 +24,9 @@ class GoodsInfo(models.Model):
     gtitle = models.CharField(max_length=20, verbose_name="商品名称", unique=True)
     gpic = models.ImageField(verbose_name='商品图片', upload_to='df_goods/image/%Y/%m', null=True, blank=True)  # 商品图片
     # gpic = models.ImageField(upload_to="df_goods/image/%Y/%m", verbose_name="图片路径", default="image/default.png")
-    gprice = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="商品价格")  # 商品价格小数位为两位，整数位为3位
-    gunit = models.CharField(max_length=20, default='500g', verbose_name="单位重量")
+    gprice = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="i5+256GB价格")  # 商品价格小数位为10位，整数位为3位
+    gprice1 = models.DecimalField(max_digits=10, decimal_places=2,default='5000', verbose_name="i7+512GB价格",null=True)
+    endprice = models.DecimalField(max_digits=10, decimal_places=2, default='5000', verbose_name="最终价格", null=True)
     gclick = models.IntegerField(verbose_name="点击量", default=0, null=False)
     gjianjie = models.CharField(max_length=2000, verbose_name="简介")
     gkucun = models.IntegerField(verbose_name="库存", default=0)

@@ -142,7 +142,7 @@
 	<div class="total_count">全部商品<em>{{ carts|length }}</em>件</div>
 	<ul class="cart_list_th clearfix">
 		<li class="col01">商品名称</li>
-		<li class="col02">商品单位</li>
+		<!--li class="col02">商品单位</li-->
 		<li class="col03">商品单价</li>
 		<li class="col04">数量</li>
 		<li class="col05">小计</li>
@@ -153,9 +153,9 @@
 	<ul class="cart_list_td clearfix" id="{{ cart.id }}">
 		<li class="col01"><input type="checkbox" name="" id="check_goods" checked="checked"></li>
 		<li class="col02"><img src="{{ MEDIA_URL }}{{ cart.goods.gpic }}"></li>
-		<li class="col03">{{ cart.goods.gtitle }}<br><em>{{ cart.goods.gprice }}元/{{ cart.goods.gunit }}</em><br><em>库存：<span id="goods_kucun">{{ cart.goods.gkucun }}</span></em></li>
-		<li class="col04">{{ cart.goods.gunit }}</li>
-		<li class="col05">{{ cart.goods.gprice }}</li>
+		<li class="col03">{{ cart.goods.gtitle }}<br><em>{{ cart.goods.endprice }}元/{{ cart.goods.gunit }}</em><br><em>库存：<span id="goods_kucun">{{ cart.goods.gkucun }}</span></em></li>
+		<!--li class="col04">{{ cart.goods.gunit }}</li-->
+		<li class="col05">{{ cart.goods.endprice }}</li>
 		<li class="col06">
 			<div class="num_add">
 				<a href="javascript:;" class="add fl">+</a>
