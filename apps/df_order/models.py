@@ -26,7 +26,7 @@ class OrderDetailInfo(models.Model):  # 大订单中的具体某一商品订单
 
     goods = models.ForeignKey(GoodsInfo, on_delete=models.CASCADE, verbose_name="商品")  # 关联商品信息
     order = models.ForeignKey(OrderInfo, on_delete=models.CASCADE, verbose_name="订单")
-    price = models.DecimalField(max_digits=6, decimal_places=2, verbose_name="商品价格")
+    price = models.DecimalField(max_digits=7, decimal_places=2, verbose_name="商品价格")
     count = models.IntegerField(verbose_name="商品数")
 
     class Meta:
