@@ -31,7 +31,7 @@ class GoodsBrowser(models.Model):
     browser_time = models.DateTimeField(default=datetime.now, verbose_name="浏览时间")
 
     class Meta:
-        verbose_name = "用户浏览记录"
+        verbose_name = "用户浏览记录" # 记录用户浏览记录
         verbose_name_plural = verbose_name
 
     def __str__(self):
