@@ -58,13 +58,13 @@
 			<h3>{{ goods.gtitle }}</h3>
 			<p>{{ goods.gjianjie }}</p>
 			<div class="prize_bar">
-				<span class="show_pirze">¥<em id="gprice">{{ goods.gprice }}</em></span>
+				<span class="show_pirze">¥<em id="gprice">{{ goods.endprice }}</em></span>
 				<span class="show_unit">库  存：<span class="goods_kucun">{{ goods.gkucun }}</span></span>
 			</div>
-			<div class="operate_btn">
-				 <a href="javascript:pot()" class="buy_btn",id="buy_now">i5+256GB</a>
-				<a href="" class="add_cart" id="add_cart">i7+512GB</a>
-			</div>
+
+				 <button href="javascript:;" class="i5" id="i5" >i5+256GB</button>&nbsp;&nbsp;
+				 <button href="javascript:;" class="i7" id="i7" >i7+256GB</button>
+
 			<div class="goods_num clearfix">
 				<div class="num_name fl">数 量：</div>
 				<div class="num_add fl">
@@ -73,7 +73,7 @@
 					<a href="javascript:minus();" class="minus fr">-</a>
 				</div>
 			</div>
-			<div class="total">总价：<em id="gtotal">{{ goods.gprice }}元</em></div>
+			<div class="total">总价：<em id="gtotal">{{ goods.endprice }}元</em></div>
 			<div class="operate_btn">
                 {% if request.session.user_name|default:'' != '' %}
                     <a href="javascript:;" class="buy_btn" id="buy_now">立即购买</a>
@@ -125,7 +125,10 @@
 
 	<script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript">
-    $(document).ready(function(){
+	$.ajaxSetup({
+            data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+        })
+	$(document).ready(function(){
 
         $(".buy_btn").click(function () {
             num = parseInt($('.num_show').val());
@@ -174,6 +177,24 @@
             });
         });
 
+		$('#i5').click(function () {
+		      data={
+     	     		csrfmiddlewaretoken: '{{ csrf_token }}',
+        			gid:'{{goods.id}}'
+      		  };
+      		   $.post('changeprice1/',data,function (data) {
+					window.location.reload();
+            });
+        })
+        $('#i7').click(function () {
+		      data={
+     	     		csrfmiddlewaretoken: '{{ csrf_token }}',
+        			gid:'{{goods.id}}'
+      		  };
+      		   $.post('changeprice2/',data,function (data) {
+					window.location.reload();
+            });
+        })
     });
 	</script>
 

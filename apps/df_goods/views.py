@@ -1,11 +1,12 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
-
+from django.http import HttpResponse
+from django.http import JsonResponse
 from df_user.models import UserInfo
 from .models import GoodsInfo, TypeInfo
 from df_cart.models import CartInfo
 from df_user.models import GoodsBrowser
-
+from df_goods.models import GoodsInfo
 
 def index(request):
     # 查询各个分类的最新4条，最热4条数据
@@ -174,3 +175,21 @@ def ordinary_search(request):
         'paginator': paginator,
     }
     return render(request, 'df_goods/ordinary_search.html', context)
+def changeprice1(request,self):
+    goodsdata={}
+    goodsid=request.POST.get('gid')
+    goods=GoodsInfo.objects.get(id=goodsid)
+    goods.endprice=goods.gprice
+    goods.save()
+    goodsdata['ok'] = 1
+    goodsdata['price']=goods.endprice
+    return JsonResponse(goodsdata)
+def changeprice2(request,self):
+    goodsdata={}
+    goodsid=request.POST.get('gid')
+    goods=GoodsInfo.objects.get(id=goodsid)
+    goods.endprice=goods.gprice1
+    goods.save()
+    goodsdata['ok'] = 1
+    goodsdata['price']=goods.endprice
+    return JsonResponse(goodsdata)
