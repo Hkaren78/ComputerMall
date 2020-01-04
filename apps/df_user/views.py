@@ -104,8 +104,15 @@ def logout(request):  # 用户登出
     return redirect(reverse("df_goods:index"))
 
 
+def find_psw(request): # 找回密码
+    context = {
+        'title': '找回密码',
+    }
+    return render(request, 'df_user/find_psw.html', context)
+
+
 @user_decorator.login
-def info(request):  # 用户中心
+def info(request):  # 用户中心，显示最近浏览记录
     username = request.session.get('user_name')
     user = UserInfo.objects.filter(uname=username).first()
     browser_goods = GoodsBrowser.objects.filter(user=user).order_by("-browser_time")
