@@ -182,8 +182,9 @@
      	     		csrfmiddlewaretoken: '{{ csrf_token }}',
         			gid:'{{goods.id}}'
       		  };
-      		   $.post('changeprice1/',data,function (data) {
-					window.location.reload();
+      		   $.post('changeprice1/',data,function (goodsdate) {
+					if(goodsdate.ok==1)
+						window.location.reload();
             });
         })
         $('#i7').click(function () {
@@ -191,8 +192,9 @@
      	     		csrfmiddlewaretoken: '{{ csrf_token }}',
         			gid:'{{goods.id}}'
       		  };
-      		   $.post('changeprice2/',data,function (data) {
-					window.location.reload();
+      		   $.post('changeprice2/',data,function (goodsdate) {
+					if(goodsdate.ok==1)
+						window.location.reload();
             });
         })
     });

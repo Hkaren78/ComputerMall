@@ -176,14 +176,13 @@ def ordinary_search(request):
     }
     return render(request, 'df_goods/ordinary_search.html', context)
 def changeprice1(request,self):
-    goodsdata={}
+    goodsdate={}
     goodsid=request.POST.get('gid')
     goods=GoodsInfo.objects.get(id=goodsid)
     goods.endprice=goods.gprice
     goods.save()
-    goodsdata['ok'] = 1
-    goodsdata['price']=goods.endprice
-    return JsonResponse(goodsdata)
+    goodsdate['ok'] = 1
+    return JsonResponse(goodsdate)
 def changeprice2(request,self):
     goodsdata={}
     goodsid=request.POST.get('gid')
@@ -191,5 +190,4 @@ def changeprice2(request,self):
     goods.endprice=goods.gprice1
     goods.save()
     goodsdata['ok'] = 1
-    goodsdata['price']=goods.endprice
     return JsonResponse(goodsdata)
