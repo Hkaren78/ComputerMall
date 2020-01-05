@@ -1,5 +1,5 @@
 """
-WSGI config for daily_fresh_demo project.
+WSGI config for computer_mall project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "daily_fresh_demo.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "computer_mall.settings")
 
 application = get_wsgi_application()
