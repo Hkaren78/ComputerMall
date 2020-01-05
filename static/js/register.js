@@ -4,6 +4,8 @@ $(function(){
 	var error_password = false;
 	var error_check_password = false;
 	var error_email = false;
+	var error_question = false;
+	var error_answer = false;
 	var error_check = false;
 
 
@@ -22,6 +24,44 @@ $(function(){
 	$('#email').blur(function() {
 		check_email();
 	});
+
+	$('#f_pwd').blur(function() {
+		check_user_name();
+	});
+
+	$('#q_answer').blur(function() {
+		check_user_name();
+	});
+
+	function check_f_pwd(){
+		var aa = $('#f_pwd').val();
+		if(aa == "0")
+		{
+			$('#f_pwd').next().html('密保问题将作为找回密码的重要凭证哦');
+			$('#f_pwd').next().show();
+			error_password = true;
+		}
+		else
+		{
+			$('#f_pwd').next().hide();
+			error_password = false;
+		}
+	}
+
+	function check_q_answer(){
+		var len = $('#q_answer').val().length;
+		if(len<1||len>20)
+		{
+			$('#q_answer').next().html('答案在1-20个字符之间，这将作为找回密码的重要凭证');
+			$('#q_answer').next().show();
+			error_password = true;
+		}
+		else
+		{
+			$('#q_answer').next().hide();
+			error_password = false;
+		}
+	}
 
 	$('#allow').click(function() {
 		if($(this).is(':checked'))
@@ -74,7 +114,7 @@ $(function(){
 		{
 			$('#pwd').next().hide();
 			error_password = false;
-		}		
+		}
 	}
 
 
@@ -92,8 +132,8 @@ $(function(){
 		{
 			$('#cpwd').next().hide();
 			error_check_password = false;
-		}		
-		
+		}
+
 	}
 
 	function check_email(){
@@ -119,8 +159,10 @@ $(function(){
 		check_pwd();
 		check_cpwd();
 		check_email();
+		check_f_pwd();
+		check_q_answer();
 
-		if(error_name == false && error_password == false && error_check_password == false && error_email == false && error_check == false)
+		if(error_name == false && error_password == false && error_check_password == false && error_email == false && error_check == false && error_question == false && error_answer == false)
 		{
 			return true;
 		}

@@ -11,6 +11,8 @@
 	var error_password = false;
 	var error_check_password = false;
 	var error_email = false;
+	var error_question = false;
+	var error_answer = false;
 	var error_check = false;
 
 
@@ -42,6 +44,14 @@
 			$(this).siblings('span').html('请勾选同意');
 			$(this).siblings('span').show();
 		}
+	});
+
+	$('#f_pwd').blur(function() {
+		check_question();
+	});
+
+	$('#q_answer').blur(function() {
+		check_answer();
 	});
 
 
@@ -123,6 +133,32 @@
 
 	}
 
+	function check_question() {
+		var get_question = $('#f_psw);
+		if (get_question == "0") {
+			$('#f_pwd').next().html('请选择密保问题，这将作为找回密码的重要依据');
+			$('#user_question').next.show();
+			error_question = true;
+		}
+		else {
+			$('#user_question').next.hide();
+			error_question = false;
+		}
+	}
+
+	function check_answer() {
+		var len = $('#q_answer).val().length;
+		if (len == 0 || len > 20) {
+			$('#q_answer').next().html('请输入20字以内的答案，这将作为您找回密码的重要凭证');
+			$('#q_answer').next().show();
+			error_answer = true;
+		}
+		else {
+			$('#user_name').next().hide();
+			error_answer = false;
+		}
+	}
+
     <!--若上述条件全部满足，并且已勾选同意用户指南，则可以完成注册-->
 	$('#reg_form').submit(function() {
 		check_user_name();
@@ -130,7 +166,7 @@
 		check_cpwd();
 		check_email();
 
-		if(error_name == false && error_password == false && error_check_password == false && error_email == false && error_check == false)
+		if(error_name == false && error_password == false && error_check_password == false && error_email == false && error_check == false && error_question == false && error_answer == false)
 		{
 			return true;
 		}
@@ -147,7 +183,7 @@
 {% block body %}
 	<div class="register_con">
 		<div class="l_con fl">
-			<a class="reg_logo"><img src="/static/images/logo02.png"></a>
+			<a href="{% url "df_goods:index" %}" class="reg_logo"><img src="/static/images/logo02.png"></a>
 			<div class="reg_slogan">欢迎进入电脑商城</div>
 			<div class="reg_banner"></div>
 		</div>
@@ -179,6 +215,23 @@
 					<li>
 						<label>邮箱:</label>
 						<input type="text" name="email" id="email">
+						<span class="error_tip">提示信息</span>
+					</li>
+					<li>
+						<label>密保问题：</label>
+						<select name="f_pwd" id="f_pwd" style="height:38px; width:290px" >
+							<option value = "0"> </option>
+							<option value = "你的中学班主任叫什么名字？">你的中学班主任叫什么名字？</option>
+							<option value = "你的QQ号是多少？">你的QQ号是多少？</option>
+							<option value = "你最喜欢的书籍是什么？">你最喜欢的书籍是什么？</option>
+							<option value = "你的男/女朋友叫什么名字？">你的男/女朋友叫什么名字？</option>
+							<option value = "你在大学期间最喜欢的课程是什么？">你在大学期间最喜欢的课程是什么？</option>
+							<span class="error_tip">提示信息</span>
+						</select>
+					</li>
+					<li>
+						<label>你的答案:</label>
+						<input type="text" name="q_answer" id="q_answer">
 						<span class="error_tip">提示信息</span>
 					</li>
 					<li class="agreement">

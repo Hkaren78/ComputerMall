@@ -23,6 +23,8 @@ def register_handle(request):
     password = request.POST.get('pwd')
     confirm_pwd = request.POST.get('confirm_pwd')
     email = request.POST.get('email')
+    question = request.POST.get('f_pwd')
+    answer = request.POST.get('q_answer')
 
     # 判断两次密码一致性
     if password != confirm_pwd:
@@ -33,7 +35,7 @@ def register_handle(request):
     encrypted_pwd = s1.hexdigest()
 
     # 创建对象
-    UserInfo.objects.create(uname=username, upwd=encrypted_pwd, uemail=email)
+    UserInfo.objects.create(uname=username, upwd=encrypted_pwd, uemail=email, uquestion=question, uanswer=answer)
     # 注册成功
     context = {
         'title': '用户登陆',

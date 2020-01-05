@@ -9,11 +9,13 @@ class UserInfo(models.Model):
 
     uname = models.CharField(max_length=20, verbose_name="用户名", unique=True)
     upwd = models.CharField(max_length=40, verbose_name="用户密码", blank=False)
-    uemail = models.EmailField(verbose_name="邮箱", unique=True)
+    uemail = models.EmailField(verbose_name="邮箱", unique=False)
     ushou = models.CharField(max_length=20, default="", verbose_name="收货地址")
     uaddress = models.CharField(max_length=100, default="", verbose_name="地址")
     uyoubian = models.CharField(max_length=6, default="", verbose_name="邮编")
     uphone = models.CharField(max_length=11, default="", verbose_name="手机号")
+    uanswer = models.CharField(max_length=20, default="", verbose_name="答案", null=True)
+    uquestion = models.CharField(verbose_name="密保问题", default="", max_length=25, null=True)
     # default,blank是python层面的约束，不影响数据库表结构，修改时不需要迁移 python manage.py makemigrations
 
     class Meta:
